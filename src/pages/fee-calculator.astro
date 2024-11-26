@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FeeCalculator from '../components/fee-calculator/FeeCalculator';
+---
+
+<Layout title="PayPal Fee Calculator - Calculate Transaction Fees">
+  <main class="container mx-auto px-4 py-8">
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">
+        International PayPal Fee Calculator
+      </h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Calculate PayPal transaction fees for over 200 countries. Perfect for international e-commerce,
+        cross-border freelancing, and global businesses. Support for multiple currencies and fee structures.
+      </p>
+    </div>
+
+    <FeeCalculator client:load />
+
+    <div class="mt-12 max-w-2xl mx-auto">
+      <h2 class="text-2xl font-semibold text-gray-900 mb-4">
+        About PayPal Fees
+      </h2>
+      <div class="prose prose-blue">
+        <p>
+          PayPal's fee structure varies by country and transaction type. Common fee categories include:
+        </p>
+        <ul>
+          <li><strong>Standard Rate:</strong> For selling goods and services (rates vary by country)</li>
+          <li><strong>International Sales:</strong> Additional fees may apply for cross-border transactions</li>
+          <li><strong>Commercial Transactions:</strong> Different rates for business and merchant accounts</li>
+          <li><strong>Micropayments:</strong> Special rates for small transaction amounts</li>
+          <li><strong>Non-Profit:</strong> Reduced rates available for registered charities in eligible countries</li>
+        </ul>
+        <p class="text-sm text-gray-500 mt-4">
+          Select your country from the calculator above to see the specific rates that apply to your region. Rates are regularly updated to reflect PayPal's current fee structure.
+        </p>
+      </div>
+    </div>
+  </main>
+</Layout>

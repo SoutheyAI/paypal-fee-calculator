@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal Fee Calculator - International Transaction Fee Calculator</title>
+    <meta name="description" content="Free international PayPal fee calculator supporting 200+ countries. Calculate transaction fees, currency conversion rates, and estimate your actual earnings for cross-border payments.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-calculator"></i> PayPal Calculator
+            </a>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="text-center mb-5">
+                    <h1>International PayPal Fee Calculator</h1>
+                    <p class="lead text-muted">Calculate PayPal fees for international transactions across 200+ countries</p>
+                    <div class="mt-4">
+                        <p class="text-muted">Our calculator helps you:</p>
+                        <ul class="list-unstyled">
+                            <li>✓ Calculate exact PayPal fees for your region</li>
+                            <li>✓ Support for multiple currencies and countries</li>
+                            <li>✓ Handle both domestic and international transactions</li>
+                            <li>✓ Perfect for freelancers, e-commerce sellers, and businesses</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card calculator-card">
+                    <div class="card-body">
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">
+                                    <i class="bi bi-gear-fill"></i> Fee Rate Type
+                                </label>
+                                <select class="form-select" id="feeType">
+                                    <option value="goods">Goods and Services (2.89% + $0.49)</option>
+                                    <option value="invoice">Invoice and PayPal Checkout (3.49% + $0.49)</option>
+                                    <option value="card">Credit/Debit Card (2.99% + $0.49)</option>
+                                    <option value="charity">Charity Donations (1.99% + $0.49)</option>
+                                    <option value="micropayment">Micropayments (4.99% + $0.09)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">
+                                    <i class="bi bi-arrow-left-right"></i> Calculation Type
+                                </label>
+                                <select class="form-select" id="calculationType">
+                                    <option value="receive">I want to receive (Net amount)</option>
+                                    <option value="send">I want to send (Gross amount)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label">
+                                <i class="bi bi-currency-dollar"></i> Amount
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" id="amount" step="0.01" min="0" placeholder="Enter amount">
+                                <button class="btn btn-primary" onclick="calculate()">
+                                    <i class="bi bi-calculator"></i> Calculate
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="results mt-4" id="results" style="display: none;">
+                            <h5><i class="bi bi-receipt"></i> Results</h5>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <tr class="table-light">
+                                        <td><i class="bi bi-arrow-up-right"></i> Amount to Send:</td>
+                                        <td class="text-end fw-bold" id="sendAmount">$0.00</td>
+                                    </tr>
+                                    <tr class="table-light">
+                                        <td><i class="bi bi-dash-circle"></i> PayPal Fee:</td>
+                                        <td class="text-end text-danger fw-bold" id="feeAmount">$0.00</td>
+                                    </tr>
+                                    <tr class="table-success">
+                                        <td><i class="bi bi-arrow-down-right"></i> Amount to Receive:</td>
+                                        <td class="text-end text-success fw-bold" id="receiveAmount">$0.00</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5><i class="bi bi-info-circle"></i> About PayPal Fees</h5>
+                        <p class="mb-0">PayPal charges different fees based on the type of transaction. The fee typically consists of a percentage of the transaction amount plus a fixed fee. Use this calculator to estimate your fees and plan your pricing accordingly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-5 py-3">
+        <div class="container text-center">
+            <p class="text-muted mb-0"> 2024 PayPal Fee Calculator. This tool is not affiliated with PayPal.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

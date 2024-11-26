@@ -1,0 +1,217 @@
+---
+// @ts-ignore
+import { Icon } from '@iconify/react';
+import { Picture } from "astro:assets";
+import heroImage from "assets/hero.png";
+
+const features = [
+  {
+    title: "Bring Your Own Framework",
+    description:
+      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+    icon: "fluent:document-javascript-24-regular",
+  },
+  {
+    title: "100% Static HTML, No JS",
+    description:
+      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
+    icon: "fluent:trophy-24-regular",
+  },
+  {
+    title: "On-Demand Components",
+    description:
+      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.",
+    icon: "fluent:box-24-regular",
+  },
+  {
+    title: "Broad Integration",
+    description:
+      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
+    icon: "fluent:box-multiple-24-regular",
+  },
+  {
+    title: "SEO Enabled",
+    description:
+      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication.",
+    icon: "fluent:book-search-24-regular",
+  },
+  {
+    title: "Community",
+    description:
+      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
+    icon: "fluent:people-community-24-regular",
+  },
+];
+
+---
+
+<div class="py-8 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
+  <div class="my-4 flex flex-col gap-8">
+    <!-- What is Astroship -->
+    <div class="my-4 md:my-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-center">
+      <div class="order-1 md:order-1">
+        <Picture
+          src={heroImage}
+          alt="Astroship features"
+          class="w-full max-w-md rounded-xl shadow-xl ring-1 ring-gray-400/10"
+          widths={[200, 400, 600]}
+          sizes="(max-width: 800px) 100vw, 620px"
+          loading="eager"
+          format="avif"
+        />
+      </div>
+      <div class="order-2 md:order-2">
+        <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+          What is Astroship
+        </h2>
+        <p class="mt-6 text-lg leading-8 text-muted-foreground">
+          Astroship is your powerful website template that helps you create beautiful, professional websites with modern design and features.
+        </p>
+        <div class="mt-4">
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">Modern Stack</p>
+              <p class="text-md text-muted-foreground">Built with Astro and TailwindCSS for optimal performance</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">Responsive Design</p>
+              <p class="text-md text-muted-foreground">Looks great on any device, from mobile to desktop</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">SEO Optimized</p>
+              <p class="text-md text-muted-foreground">Built-in SEO features to help your site rank better</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Choose Astroship -->
+    <div class="my-4 md:my-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-center">
+      <div class="order-2 md:order-1">
+        <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+          Why Choose Astroship
+        </h2>
+        <p class="mt-6 text-lg leading-8 text-muted-foreground">
+          Experience the perfect blend of performance and design flexibility, making website creation faster and more efficient than ever.
+        </p>
+        <div class="mt-4">
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">Lightning Fast</p>
+              <p class="text-md text-muted-foreground">Zero JavaScript runtime by default</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">Easy to Customize</p>
+              <p class="text-md text-muted-foreground">Simple and intuitive component structure</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">Well Documented</p>
+              <p class="text-md text-muted-foreground">Comprehensive guides and examples</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 md:order-2">
+        <Picture
+          src={heroImage}
+          alt="Astroship features"
+          class="w-full max-w-md rounded-xl shadow-xl ring-1 ring-gray-400/10"
+          widths={[200, 400, 600]}
+          sizes="(max-width: 800px) 100vw, 620px"
+          loading="eager"
+          format="avif"
+        />
+      </div>
+    </div>
+
+    <!-- How to Create a Landing Page -->
+    <div class="my-4 md:my-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-center">
+      <div class="order-1 md:order-1">
+        <Picture
+          src={heroImage}
+          alt="Astroship features"
+          class="w-full max-w-md rounded-xl shadow-xl ring-1 ring-gray-400/10"
+          widths={[200, 400, 600]}
+          sizes="(max-width: 800px) 100vw, 620px"
+          loading="eager"
+          format="avif"
+        />
+      </div>
+      <div class="order-2 md:order-2">
+        <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+          How to Create a Landing Page for Free
+        </h2>
+        <p class="mt-6 text-lg leading-8 text-muted-foreground">
+          Start your journey with Astroship today - no complex setup required. Simply clone the template, customize it, and deploy your professional website in minutes.
+        </p>
+        <div class="mt-4">
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">1. Clone the Repository</p>
+              <p class="text-md text-muted-foreground">Get started with a simple git clone command</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">2. Customize Content</p>
+              <p class="text-md text-muted-foreground">Modify the template to match your brand</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">3. Deploy</p>
+              <p class="text-md text-muted-foreground">Push to your favorite hosting platform</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Title -->
+    <div class="text-center max-w-3xl mx-auto mt-16">
+      <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+        Everything you need to start a website
+      </h2>
+      <p class="mt-6 text-lg leading-8 text-muted-foreground">
+        Astro comes batteries included. It takes the best parts of state-of-the-art tools and adds its own innovations.
+      </p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+      {
+        features.map((item) => (
+          <div class="flex gap-4 items-start">
+            <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0 dark:bg-white">
+              <Icon client:load icon={item.icon} className="text-white dark:text-black" />
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg dark:text-white">{item.title}</h3>
+              <p class="text-slate-500 mt-2 leading-relaxed dark:text-slate-400">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FeeCalculator from '../../components/fee-calculator/FeeCalculator';
+import { formatAmount } from '../../utils/format';
+
+// 移除 getStaticPaths，改用动态路由
+const { amount } = Astro.params;
+const numericAmount = parseFloat(amount || '0');
+
+// 验证金额
+if (isNaN(numericAmount) || numericAmount < 0) {
+  return Astro.redirect('/404');
+}
+
+const formattedAmount = formatAmount(numericAmount);
+
+// 计算 PayPal 费用
+const feePercentage = 0.029; // 2.9%
+const fixedFee = 0.30; // $0.30
+const fee = (numericAmount * feePercentage + fixedFee).toFixed(2);
+const total = (numericAmount + parseFloat(fee)).toFixed(2);
+---
+
+<Layout title={`PayPal Fees for $${formattedAmount} - Instant Fee Calculator`}
+  description={`Calculate PayPal fees for $${formattedAmount}. The PayPal fee for $${formattedAmount} is $${fee}, making the total amount $${total}. Use our calculator for accurate fee calculations.`}>
+  <main class="container mx-auto px-4 py-8">
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">
+        PayPal Fees for ${formattedAmount}
+      </h1>
+      <div class="bg-white shadow-lg rounded-lg p-6 max-w-2xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+          <div class="p-4 bg-gray-50 rounded">
+            <p class="text-gray-600">Amount:</p>
+            <p class="text-2xl font-bold">${formattedAmount}</p>
+          </div>
+          <div class="p-4 bg-gray-50 rounded">
+            <p class="text-gray-600">PayPal Fee:</p>
+            <p class="text-2xl font-bold">${fee}</p>
+          </div>
+          <div class="p-4 bg-gray-50 rounded md:col-span-2">
+            <p class="text-gray-600">Total Amount:</p>
+            <p class="text-2xl font-bold">${total}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <h2 class="text-2xl font-semibold text-gray-900 mb-4">
+        Calculate PayPal Fees for Other Amounts
+      </h2>
+      <FeeCalculator client:load defaultAmount={numericAmount} />
+    </div>
+
+    <div class="mt-12 max-w-2xl mx-auto prose prose-blue">
+      <h2>Understanding PayPal Fees for ${formattedAmount}</h2>
+      <p>
+        When receiving ${formattedAmount} through PayPal for goods or services, the fee breakdown is:
+      </p>
+      <ul>
+        <li>Base amount: ${formattedAmount}</li>
+        <li>Percentage fee (2.9%): ${(numericAmount * feePercentage).toFixed(2)}</li>
+        <li>Fixed fee: $0.30</li>
+        <li>Total fee: ${fee}</li>
+        <li>Final amount you receive: ${(numericAmount - parseFloat(fee)).toFixed(2)}</li>
+      </ul>
+      <p>
+        These fees apply to domestic transactions in the United States. International transactions may incur additional fees.
+      </p>
+      
+      <h3>Common Questions About PayPal Fees</h3>
+      <ul>
+        <li>The standard PayPal fee is 2.9% plus $0.30 per transaction</li>
+        <li>International transactions may include additional fees</li>
+        <li>Different rates may apply for other payment types or merchant accounts</li>
+      </ul>
+    </div>
+  </main>
+</Layout>

@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Allow: /fees/
 
-Sitemap: http://astroship.web3templates.com/sitemap-index.xml
+# Sitemaps
+Sitemap: https://feecalc.org/sitemap-index.xml
+Sitemap: https://feecalc.org/sitemap-fees.xml

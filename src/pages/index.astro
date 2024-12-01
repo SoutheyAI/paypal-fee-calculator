@@ -22,5 +22,20 @@ const t = useTranslations(lang);
     <Faq />
     <Logos />
     <Cta />
+    <section class="py-8">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-4">Common PayPal Fee Calculations</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[9.99, 19.99, 49.99, 99.99, 199.99, 499.99, 999.99, 1999.99].map(amount => (
+            <a
+              href={`/fees/${amount}`}
+              class="p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+            >
+              Calculate fees for ${amount}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
   </Container>
 </Layout>

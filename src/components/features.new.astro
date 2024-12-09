@@ -1,0 +1,205 @@
+---
+// @ts-ignore
+import { Icon } from '@iconify/react';
+import { Picture } from "astro:assets";
+import heroImage from "assets/hero.png";
+
+const features = [
+  {
+    title: "PayPal Fees",
+    description:
+      "Calculate PayPal transaction fees, including domestic and international rates, for different payment types.",
+    icon: "simple-icons:paypal",
+  },
+  {
+    title: "Amazon Fees",
+    description:
+      "Estimate Amazon seller fees, including referral fees, FBA fees, and storage fees for your products.",
+    icon: "simple-icons:amazon",
+  },
+  {
+    title: "eBay Fees",
+    description:
+      "Calculate eBay final value fees, insertion fees, and optional feature fees for your listings.",
+    icon: "simple-icons:ebay",
+  },
+  {
+    title: "Multi-Currency Support",
+    description:
+      "Support for multiple currencies with real-time exchange rates for accurate international fee calculations.",
+    icon: "fluent:money-24-regular",
+  },
+  {
+    title: "Fee Comparison",
+    description:
+      "Compare fees across different platforms to make informed decisions about where to sell your products.",
+    icon: "fluent:data-trending-24-regular",
+  },
+  {
+    title: "Profit Calculator",
+    description:
+      "Calculate your net profit after all platform fees, shipping costs, and other expenses.",
+    icon: "fluent:calculator-24-regular",
+  },
+];
+
+---
+
+<div class="py-8 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
+  <div class="my-4 flex flex-col gap-8">
+    <!-- Platform Overview -->
+    <div class="my-4 md:my-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-center">
+      <div class="order-1 md:order-1">
+        <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+          Understanding Platform Fees
+        </h2>
+        <p class="mt-6 text-lg leading-8 text-muted-foreground">
+          Our comprehensive calculator helps you understand and optimize your costs across major e-commerce platforms.
+        </p>
+        <div class="mt-4">
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">Accurate Calculations</p>
+              <p class="text-md text-muted-foreground">Real-time fee calculations based on latest platform rates</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">Multiple Platforms</p>
+              <p class="text-md text-muted-foreground">Support for PayPal, Amazon, eBay, and more</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">Profit Analysis</p>
+              <p class="text-md text-muted-foreground">Detailed breakdown of fees and profit margins</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-2 md:order-2">
+        <Picture
+          src={heroImage}
+          alt="Platform Fee Overview"
+          class="w-full max-w-md rounded-xl shadow-xl ring-1 ring-gray-400/10"
+          widths={[200, 400, 600]}
+          sizes="(max-width: 800px) 100vw, 620px"
+          loading="eager"
+          format="avif"
+        />
+      </div>
+    </div>
+
+    <!-- Fee Comparison -->
+    <div class="my-4 md:my-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-center">
+      <div class="order-1 md:order-1">
+        <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+          Compare Platform Fees
+        </h2>
+        <p class="mt-6 text-lg leading-8 text-muted-foreground">
+          Make informed decisions by comparing fees across different platforms and understanding their impact on your business.
+        </p>
+        <div class="mt-4">
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">Real-time Rates</p>
+              <p class="text-md text-muted-foreground">Always up-to-date with current platform fees</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">Detailed Breakdown</p>
+              <p class="text-md text-muted-foreground">See all fee components and their calculations</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">Cost Optimization</p>
+              <p class="text-md text-muted-foreground">Find the most cost-effective platform for your business</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-2 md:order-2">
+        <Picture
+          src={heroImage}
+          alt="Fee Comparison Features"
+          class="w-full max-w-md rounded-xl shadow-xl ring-1 ring-gray-400/10"
+          widths={[200, 400, 600]}
+          sizes="(max-width: 800px) 100vw, 620px"
+          loading="eager"
+          format="avif"
+        />
+      </div>
+    </div>
+
+    <!-- How to Calculate Fees -->
+    <div class="my-4 md:my-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-center">
+      <div class="order-1 md:order-1">
+        <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+          How to Calculate Your Fees
+        </h2>
+        <p class="mt-6 text-lg leading-8 text-muted-foreground">
+          Get accurate fee calculations in three simple steps and make better business decisions.
+        </p>
+        <div class="mt-4">
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">1. Select Platform</p>
+              <p class="text-md text-muted-foreground">Choose from PayPal, Amazon, eBay, or other platforms</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">2. Enter Details</p>
+              <p class="text-md text-muted-foreground">Input your transaction amount and type</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">3. View Results</p>
+              <p class="text-md text-muted-foreground">Get detailed fee breakdown and profit analysis</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-2 md:order-2">
+        <Picture
+          src={heroImage}
+          alt="Fee Calculation Guide"
+          class="w-full max-w-md rounded-xl shadow-xl ring-1 ring-gray-400/10"
+          widths={[200, 400, 600]}
+          sizes="(max-width: 800px) 100vw, 620px"
+          loading="eager"
+          format="avif"
+        />
+      </div>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        features.map((item) => (
+          <div class="flex gap-4 items-start">
+            <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
+              <Icon client:load icon={item.icon} className="text-white" />
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg">{item.title}</h3>
+              <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

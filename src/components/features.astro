@@ -2,7 +2,14 @@
 // @ts-ignore
 import { Icon } from '@iconify/react';
 import { Picture } from "astro:assets";
-import heroImage from "assets/hero.png";
+import heroImage from "../assets/hero.png";
+import calculatorOverview from "../assets/calculator-overview.png";
+import platformComparison from "../assets/platform-comparison.png";
+import calculationSteps from "../assets/calculation-steps.png";
+import understandingFees from "../assets/features/understanding-fees.png";
+import compareFees from "../assets/features/compare-fees.png";
+import calculateFees from "../assets/features/calculate-fees.png";
+import feeOverview from "../assets/features/fee-overview.png";
 
 const features = [
   {
@@ -51,8 +58,8 @@ const features = [
     <div class="my-4 md:my-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-center">
       <div class="order-1 md:order-1">
         <Picture
-          src={heroImage}
-          alt="Astroship features"
+          src={understandingFees}
+          alt="Understanding Platform Fees"
           class="w-full max-w-md rounded-xl shadow-xl ring-1 ring-gray-400/10"
           widths={[200, 400, 600]}
           sizes="(max-width: 800px) 100vw, 620px"
@@ -62,31 +69,31 @@ const features = [
       </div>
       <div class="order-2 md:order-2">
         <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-          What is Astroship
+          Understanding Platform Fees
         </h2>
         <p class="mt-6 text-lg leading-8 text-muted-foreground">
-          Astroship is your powerful website template that helps you create beautiful, professional websites with modern design and features.
+          Our comprehensive calculator helps you understand and optimize your e-commerce fees across multiple platforms, making your business more profitable.
         </p>
         <div class="mt-4">
           <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
             <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
             <div class="space-y-1">
-              <p class="text-md font-medium leading-none">Modern Stack</p>
-              <p class="text-md text-muted-foreground">Built with Astro and TailwindCSS for optimal performance</p>
+              <p class="text-md font-medium leading-none">Real-time Calculations</p>
+              <p class="text-md text-muted-foreground">Always up-to-date with the latest platform fee structures</p>
             </div>
           </div>
           <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
             <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
             <div class="space-y-1">
-              <p class="text-md font-medium leading-none">Responsive Design</p>
-              <p class="text-md text-muted-foreground">Looks great on any device, from mobile to desktop</p>
+              <p class="text-md font-medium leading-none">Multi-Platform Support</p>
+              <p class="text-md text-muted-foreground">Calculate fees for PayPal, Amazon, eBay and more</p>
             </div>
           </div>
           <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
             <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
             <div class="space-y-1">
-              <p class="text-md font-medium leading-none">SEO Optimized</p>
-              <p class="text-md text-muted-foreground">Built-in SEO features to help your site rank better</p>
+              <p class="text-md font-medium leading-none">Profit Insights</p>
+              <p class="text-md text-muted-foreground">Get detailed breakdowns of all fees and profit margins</p>
             </div>
           </div>
         </div>
@@ -97,39 +104,46 @@ const features = [
     <div class="my-4 md:my-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-center">
       <div class="order-2 md:order-1">
         <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-          Why Choose Astroship
+          Compare Platform Fees
         </h2>
         <p class="mt-6 text-lg leading-8 text-muted-foreground">
-          Experience the perfect blend of performance and design flexibility, making website creation faster and more efficient than ever.
+          Make informed decisions by comparing fees across different e-commerce platforms and understanding their impact on your business.
         </p>
         <div class="mt-4">
           <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
             <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
             <div class="space-y-1">
-              <p class="text-md font-medium leading-none">Lightning Fast</p>
-              <p class="text-md text-muted-foreground">Zero JavaScript runtime by default</p>
+              <p class="text-md font-medium leading-none">Compare Platform Fees</p>
+              <p class="text-md text-muted-foreground">Make informed decisions by comparing fees across different e-commerce platforms and understanding their impact on your business.</p>
             </div>
           </div>
           <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
             <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
             <div class="space-y-1">
-              <p class="text-md font-medium leading-none">Easy to Customize</p>
-              <p class="text-md text-muted-foreground">Simple and intuitive component structure</p>
+              <p class="text-md font-medium leading-none">Side-by-Side Comparison</p>
+              <p class="text-md text-muted-foreground">Compare fees and rates across multiple platforms simultaneously</p>
             </div>
           </div>
           <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
             <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
             <div class="space-y-1">
-              <p class="text-md font-medium leading-none">Well Documented</p>
-              <p class="text-md text-muted-foreground">Comprehensive guides and examples</p>
+              <p class="text-md font-medium leading-none">Detailed Breakdowns</p>
+              <p class="text-md text-muted-foreground">See all fee components and how they affect your bottom line</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+            <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+            <div class="space-y-1">
+              <p class="text-md font-medium leading-none">Smart Recommendations</p>
+              <p class="text-md text-muted-foreground">Get insights on which platform might be best for your business</p>
             </div>
           </div>
         </div>
       </div>
       <div class="order-1 md:order-2">
         <Picture
-          src={heroImage}
-          alt="Astroship features"
+          src={compareFees}
+          alt="Platform Fee Comparison"
           class="w-full max-w-md rounded-xl shadow-xl ring-1 ring-gray-400/10"
           widths={[200, 400, 600]}
           sizes="(max-width: 800px) 100vw, 620px"
@@ -143,8 +157,8 @@ const features = [
     <div class="my-4 md:my-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-center">
       <div class="order-1 md:order-1">
         <Picture
-          src={heroImage}
-          alt="Astroship features"
+          src={calculateFees}
+          alt="How to Calculate Fees"
           class="w-full max-w-md rounded-xl shadow-xl ring-1 ring-gray-400/10"
           widths={[200, 400, 600]}
           sizes="(max-width: 800px) 100vw, 620px"
@@ -154,31 +168,31 @@ const features = [
       </div>
       <div class="order-2 md:order-2">
         <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-          How to Create a Landing Page for Free
+          How to Calculate Your Fees
         </h2>
         <p class="mt-6 text-lg leading-8 text-muted-foreground">
-          Start your journey with Astroship today - no complex setup required. Simply clone the template, customize it, and deploy your professional website in minutes.
+          Calculate your e-commerce fees accurately in three simple steps. Our calculator makes it easy to understand and optimize your platform costs.
         </p>
         <div class="mt-4">
           <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
             <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
             <div class="space-y-1">
-              <p class="text-md font-medium leading-none">1. Clone the Repository</p>
-              <p class="text-md text-muted-foreground">Get started with a simple git clone command</p>
+              <p class="text-md font-medium leading-none">Enter Transaction Details</p>
+              <p class="text-md text-muted-foreground">Input your sale amount and platform settings</p>
             </div>
           </div>
           <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
             <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
             <div class="space-y-1">
-              <p class="text-md font-medium leading-none">2. Customize Content</p>
-              <p class="text-md text-muted-foreground">Modify the template to match your brand</p>
+              <p class="text-md font-medium leading-none">Review Fee Breakdown</p>
+              <p class="text-md text-muted-foreground">See detailed analysis of all applicable fees</p>
             </div>
           </div>
           <div class="grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
             <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
             <div class="space-y-1">
-              <p class="text-md font-medium leading-none">3. Deploy</p>
-              <p class="text-md text-muted-foreground">Push to your favorite hosting platform</p>
+              <p class="text-md font-medium leading-none">Get Results</p>
+              <p class="text-md text-muted-foreground">Receive your final costs and profit calculations</p>
             </div>
           </div>
         </div>
@@ -220,8 +234,8 @@ const features = [
       </div>
       <div class="order-2 md:order-2">
         <Picture
-          src={heroImage}
-          alt="Fee Calculator Features"
+          src={feeOverview}
+          alt="Comprehensive Fee Calculations"
           class="w-full max-w-md rounded-xl shadow-xl ring-1 ring-gray-400/10"
           widths={[200, 400, 600]}
           sizes="(max-width: 800px) 100vw, 620px"

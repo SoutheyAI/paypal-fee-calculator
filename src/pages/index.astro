@@ -3,39 +3,52 @@ import Container from "@components/container.astro";
 import Cta from "@components/cta.astro";
 import Features from "@components/features.astro";
 import Hero from "@components/hero.astro";
-import Logos from "@components/logos.astro";
-import Testimonials from "@components/testimonials.astro";
-import Faq from "@components/faq.astro";
 import Layout from "@layouts/Layout.astro";
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const url = Astro.url;
 const lang = getLangFromUrl(url);
 const t = useTranslations(lang);
+
+const commonAmounts = [
+  { amount: 9.99, platforms: ['paypal', 'amazon', 'ebay'] },
+  { amount: 19.99, platforms: ['paypal', 'amazon', 'ebay'] },
+  { amount: 49.99, platforms: ['paypal', 'amazon', 'ebay'] },
+  { amount: 99.99, platforms: ['paypal', 'amazon', 'ebay'] },
+  { amount: 199.99, platforms: ['paypal', 'amazon', 'ebay'] },
+  { amount: 499.99, platforms: ['paypal', 'amazon', 'ebay'] },
+  { amount: 999.99, platforms: ['paypal', 'amazon', 'ebay'] },
+  { amount: 1999.99, platforms: ['paypal', 'amazon', 'ebay'] }
+];
 ---
 
 <Layout title={t('hero.title')}>
   <Container>
     <Hero />
     <Features />
-    <Testimonials />
-    <Faq />
-    <Logos />
-    <Cta />
     <section class="py-8">
       <div class="container mx-auto px-4">
-        <h2 class="text-2xl font-bold mb-4">Common PayPal Fee Calculations</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[9.99, 19.99, 49.99, 99.99, 199.99, 499.99, 999.99, 1999.99].map(amount => (
-            <a
-              href={`/fees/${amount}`}
-              class="p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
-            >
-              Calculate fees for ${amount}
-            </a>
+        <h2 class="text-2xl font-bold mb-4">Quick Fee Calculations</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {commonAmounts.map(({ amount, platforms }) => (
+            <div class="bg-white rounded-lg shadow hover:shadow-md transition-shadow p-4">
+              <h3 class="text-xl font-semibold mb-2">${amount}</h3>
+              <div class="flex flex-col gap-2">
+                {platforms.map(platform => (
+                  <a
+                    href={`/calculator/${platform}?amount=${amount}`}
+                    class="text-sm text-blue-600 hover:text-blue-800 flex items-center gap-2"
+                  >
+                    Calculate {platform.charAt(0).toUpperCase() + platform.slice(1)} fees
+                    <span class="text-gray-400">→</span>
+                  </a>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
     </section>
+    <Cta />
   </Container>
 </Layout>

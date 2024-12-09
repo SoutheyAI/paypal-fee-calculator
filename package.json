@@ -8,7 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "init-db": "python3 scripts/populate-db.py"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.0.1",

@@ -1,4 +1,16 @@
 ---
+export function getStaticPaths() {
+  // Pre-generate pages for common amounts
+  const amounts = [
+    10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000,
+    15, 25, 75, 150, 250, 750, 1500, 2500, 7500, 15000
+  ];
+  
+  return amounts.map(amount => ({
+    params: { amount: amount.toString() },
+  }));
+}
+
 import Layout from '../../layouts/Layout.astro';
 import FeeCalculator from '../../components/fee-calculator/FeeCalculator';
 import { formatAmount } from '../../utils/format';
